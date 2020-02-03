@@ -37,14 +37,13 @@ fun figureSet(n: Int/*размерность*/,
               x: Int/*Индекс строки*/,
               y: Int/*Индекс столбца*/,
               impTable: Array<Array<String>>/*Таблица*/): Array<Array<String>> {
-    val table = impTable
 
     //заполняем по горизонтали
-    table[x] = Array(n) {"x"}
+    impTable[x] = Array(n) {"x"}
 
     //заполняем по вертикали
     for(i in 0 until n) {
-        table[i][y] = "x"
+        impTable[i][y] = "x"
     }
 
     var x_ = x
@@ -52,7 +51,7 @@ fun figureSet(n: Int/*размерность*/,
     //диагональ в левый верхний угол
     for (i in x downTo 0) {
         if (y_ in 0 until n) {
-            table[i][y_] = "x"
+            impTable[i][y_] = "x"
             y_--
         } else break
     }
@@ -61,7 +60,7 @@ fun figureSet(n: Int/*размерность*/,
     y_ = y
     for (i in x downTo 0) {
         if (y_ in 0 until n) {
-            table[i][y_] = "x"
+            impTable[i][y_] = "x"
             y_++
         } else break
     }
@@ -70,7 +69,7 @@ fun figureSet(n: Int/*размерность*/,
     y_ = y
     for (i in x until n) {
         if (y_ in 0 until n) {
-            table[i][y_] = "x"
+            impTable[i][y_] = "x"
             y_++
         } else break
     }
@@ -79,20 +78,20 @@ fun figureSet(n: Int/*размерность*/,
     y_ = y
     for (i in x until n) {
         if (y_ in 0 until n) {
-            table[i][y_] = "x"
+            impTable[i][y_] = "x"
             y_--
         } else break
     }
 
     //Выставляем ферзя
-    table[x][y] = "o"
+    impTable[x][y] = "o"
 
     for (col in 0 until n) {
         for (rows in 0 until n){
-            print("${table[col][rows]}  ")
+            print("${impTable[col][rows]}  ")
         }
         println()
     }
 
-    return table
+    return impTable
 }

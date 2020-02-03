@@ -6,10 +6,9 @@ fun main() {
 }
 
 fun sum(n_: Int){
-    var n = n_
     var sum = 0
-    for (i in 1..n) {
-        sum = sum + i
+    for (i in 1..n_) {
+        sum += i
     }
     print(sum)
 }

@@ -16,7 +16,7 @@
 fun main() {
 
     var list = ArrayList<Int>()
-    for (i in 1..4) {
+    for (i in 10..13) {
         list.add(i)
     }
     print(calc(list, 0.00))
@@ -31,8 +31,8 @@ fun calc (array: ArrayList<Int>, perc: Double): Double {
     val sum = a + b
     array.add(sum)
     val proc: Double = sum * 5.00 / 100.00
-    sum_perc = sum_perc + proc
-    println (sum_perc)
+    sum_perc += proc
+
     if (array.size > 1) {
         calc (array, sum_perc)
     }

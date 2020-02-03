@@ -7,10 +7,10 @@ fun main() {
 }
 
 fun getSubString(string: String): String {
-    var stringLength = string.length
+    val stringLength = string.length
     var substringStart = ""
-    var substringEnd = ""
-    var substringStartLength = 0
+    var substringEnd: String
+    var substringStartLength: Int
     for(i in 1..stringLength) {
         substringStart = string.substring(0, i)
         substringStartLength = substringStart.length
